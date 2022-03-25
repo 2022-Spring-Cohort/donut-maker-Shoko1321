@@ -6,13 +6,16 @@ body {
     margin: auto;
     text-align: center;
 }                                           
-
+.table {
+    
+}
 p {
     font-size: 20px;
     color: black;
     display: block;
     margin: 5px;
 }
+
 
 #space {
     margin: auto;
@@ -27,13 +30,13 @@ p {
     width:389px;
     height:60px;
 }
+.button {
+    background-color: aqua;
+    color: black;
+    border: 2px solid #4CAF50;
+  }
 
-table {
-    margin-top: 10px;
-    border: 2px solid;
-    border-radius: 5px;
-    background-color: yellow;
-}
+
 
 td {
     border:1px solid;

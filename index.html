@@ -1,55 +1,40 @@
 <html>
     <head>
-        <script type="text/javascript" src="index.js"></script>
-        <title>Donut Despair</title>
+        
+        <title>Fred's Donuts</title>
         <link rel = "stylesheet" href = "layout.css"/>
     </head>
 
     <body>
-        <div id = "space"></div>
-        <div id = "donut" onclick="donutClick()">
-            <img src="https://i.giphy.com/media/8aM0z4EOqAgPZIYprz/giphy.webp" width="200px"/>
+        <h1 class="header">Fred's Donut Shack</h1>
+
+        <!-- <div id = "space"></div> -->
+        <div id ="donutButton">
+            <img src="https://i.giphy.com/media/8aM0z4EOqAgPZIYprz/giphy.webp" alt="donutButton" width="200px"/>
         </div>
         
         <p>Donuts Sold to date:</p>
-        
+        <!-- donut count -->
         <div id = "numbers"></div>
-        <div id= "upgradeLevel"></div>
+        <div id ="clickWorth"></div>
+        <div id ="displayMultiplier"></div>
+        <div id ="autoClickCount"></div>
+        <div id ="autoClickCost"></div>
+        <div id ="multiCount"></div>
+        <div id ="multiCost"></div>
+       
 
-        <p>Intructions: Well, you just kinda click the donut?</p>
-        <p>:)</p>
+        <p>Intructions:Click that donut</p>
+        
 
-        <table>
-            <tr>
-                <td>Name</td>
-                <td>What it do</td>
-                <td>Cost</td>
-            </tr>
-            
-            <tr>
-                <td>Chocolate Donuts</td>
-                <td>You can now make chocolate donuts!</td>
-                <td>25</td>
-            </tr>
-            
-            <tr>
-                <td>Jelly Donuts</td>
-                <td>You can now make jelly donuts! </td>
-                <td>500</td>
-            </tr>
-            
-            <tr>
-                <td>Donut Despair</td>
-                <td> Your donuts are good.... too good.</td>
-                <td>5000</td>
-            </tr>
-            
-             <tr>
-                <td>Cop invasion</td>
-                <td>The authorities had to get involved. Your donuts were too enticing, while investigating the officers couldn't resist. They just keep coming back for more.</td>
-                <td>500000</td>
-            </tr>
+        <div class="buttonList">
 
-        </table>
+            <button class="button" id ="multiButton">Upgrade Multiplier</button>
+            <button class="button"id ="autoClick">+1 Auto Clicker</button>
+            <button class="button"id ="resetButton">Reset Game</button>
+        </div>
+
+        <script type="module" src="index.js"></script>
+      
     </body>
 </html>

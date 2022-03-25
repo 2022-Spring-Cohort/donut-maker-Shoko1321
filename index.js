@@ -1,57 +1,88 @@
-var num = 0
+import donutStuff from "./donutStuff.js"
 
-window.onload = function() {
-  var name = prompt('Gimme yo name');
-  var space = document.getElementById("space");
-  space.innerHTML = name +"'s Donuts"
+const donutButton = document.querySelector("#donutButton");//
+const donutCountEl = document.querySelector("#numbers");//
+const clickWorthEl = document.querySelector("#clickWorth")//
+const autoButton = document.querySelector("#autoClick");//
+const autoCountEl = document.querySelector("#autoClickCount");//
+const autoCostEl = document.querySelector("#autoClickCost");//
+const multiButton = document.querySelector("#multiButton");
+const multiCountEl = document.querySelector("#multiCount");//
+const multiCostEl = document.querySelector("#multiCost");//
+const resetButton = document.querySelector("#resetButton")//
+const donutMaker = new donutStuff();
+
+
+
+function updateView() {
+  autoButton.disabled = !donutMaker.autoBuyEnabled;
+  multiButton.disabled = !donutMaker.multiBuyEnabled;
+  clickWorthEl.innerText =  Math.pow(2, donutMaker.multipliers).toFixed(1) + " Donuts!";
+  donutCountEl.innerText = ` ${donutMaker.donutCount.toFixed(1)}`;
+  autoCountEl.innerText = "Auto-Clickers: " + donutMaker.autoClicker;
+  autoCostEl.innerText = "Auto-Clicker Cost: " + donutMaker.autoClickCost.toFixed(1);
+  multiCountEl.innerText = "Multipliers: " + donutMaker.multipliers;
+  multiCostEl.innerText = "Multiplier Cost: " + donutMaker.multipliersCost.toFixed(1);
+
 }
 
-var donut = document.getElementById("donut");
-
-function donutClick() {
-  num += 1;
-  
-
-  
-
-  var numbers = document.getElementById("numbers");
-  numbers.innerHTML = num;
-
-  if(num >= 25){
-    num += 2;
-
-    if(num >= 50){
-      setInterval(donutClick, 5000);
-      
-    }
-    //first upgrade
-  }
-  if(num >= 500){
-    num += 3;
-
-    if(num >= 3000){
-      setInterval(donutClick, 5000);
-      
-    }
-    //2nd upgrade
-  }
-  if(num >= 5000){
-    num += 5;
-
-    if(num >= 5000){
-      setInterval(donutClick, 5000);
-      
-    }
-    //3rd upgrade
-  }
-  if(num >= 500000){
-    num += 7;
-
-    if(num >= 10000){
-      setInterval(donutClick, 5000);
-      
-    }
-    // 4th upgrade
-  }
-  
+updateView();
+//make a Donut
+function makeNewDonut() {
+  donutMaker.donutClick()
 }
+
+
+donutButton.addEventListener("click", () => {
+  makeNewDonut();
+  updateView();
+})
+
+//auto-clicker button
+autoButton.addEventListener("click", () => {
+  donutMaker.buyAutoClicker();
+  setInterval(makeNewDonut, 1000);
+  setInterval(updateView, 1000);
+  updateView();
+})
+
+//multiplier button
+multiButton.addEventListener("click", () => {
+  donutMaker.buyMultiplier();
+  updateView();
+})
+
+ resetButton.addEventListener("click", reset); 
+
+function reset(){
+  window.location.reload();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
