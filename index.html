@@ -1,13 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donut Clicker</title>
-  </head>
-  <body>
-    <div class="container"></div>
-    <script src="./index.js"></script>
-  </body>
+<html>
+    <head>
+        
+        <title>Fred's Donuts</title>
+        <link rel = "stylesheet" href = "layout.css"/>
+    </head>
+
+    <body>
+        <h1 class="header">Fred's Donut Shack</h1>
+
+        <!-- <div id = "space"></div> -->
+        <div id ="donutButton">
+            <img src="https://i.giphy.com/media/8aM0z4EOqAgPZIYprz/giphy.webp" alt="donutButton" width="200px"/>
+        </div>
+        
+        <p>Donuts Sold to date:</p>
+        <!-- donut count -->
+        <div id = "numbers"></div>
+        <div id ="clickWorth"></div>
+        <div id ="displayMultiplier"></div>
+        <div id ="autoClickCount"></div>
+        <div id ="autoClickCost"></div>
+        <div id ="multiCount"></div>
+        <div id ="multiCost"></div>
+       
+
+        <p>Intructions:Click that donut</p>
+        
+
+        <div class="buttonList">
+
+            <button class="button" id ="multiButton">Upgrade Multiplier</button>
+            <button class="button"id ="autoClick">+1 Auto Clicker</button>
+            <button class="button"id ="resetButton">Reset Game</button>
+        </div>
+
+        <script type="module" src="index.js"></script>
+      
+    </body>
 </html>
